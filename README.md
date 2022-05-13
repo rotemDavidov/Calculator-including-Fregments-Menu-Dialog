@@ -1,10 +1,12 @@
 # Calculator-including-Fregments-Menu-Dialog
 
 Adding an option menu with two entries to the Calculator app
+
 Exit:
   - available for both fragments
   - Clicking on it will open a default dialog (no need for specific layout)
   - Pressing YES will cause your app to close totally
+  - 
 Setting:
   - Should be displayed only if fragment B is displayed
   - Have an icon in the Action bar
