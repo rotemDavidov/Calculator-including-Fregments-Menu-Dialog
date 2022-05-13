@@ -4,13 +4,13 @@ Adding an option menu with two entries to the Calculator app
 
 Exit:
   - available for both fragments
-  - Clicking on it will open a default dialog (no need for specific layout)
-  - Pressing YES will cause your app to close totally
-  - 
+  - Clicking on it will open a default dialog 
+  - Pressing YES will cause the app to close totally
+  
 Setting:
   - Should be displayed only if fragment B is displayed
   - Have an icon in the Action bar
-  - Clicking on it will open a dialog with your own layout (the seekbar)
+  - Clicking on it will open a dialog with seekBar layout 
   - Pressing OK will set new precision value to the ‘result’ field
 
 
