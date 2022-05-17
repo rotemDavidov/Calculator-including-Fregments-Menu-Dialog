@@ -35,7 +35,7 @@ public class SeekbarDialogClass extends DialogFragment implements SeekBar.OnSeek
             //and make sure we dont call it from main activity to still implement an interface
             ((TextView) seekBarView.findViewById(R.id.textView6)).setText(String.format("Example: " + "%." + i + "f", ex));
         }
-        FragB.precsionVal(move);
+//        FragB.precsionVal(move); //if you want to change the val just when you press ok, go to the ok field in the mainActivity and call to precsionVal there
     }
     @Override
     public void onStartTrackingTouch (SeekBar seekBar){
@@ -71,6 +71,7 @@ public class SeekbarDialogClass extends DialogFragment implements SeekBar.OnSeek
         Bundle args = getArguments();
         int prog = args.getInt("move");
         SeekBar_.setProgress(prog);
+        ((TextView) seekBarView.findViewById(R.id.textView6)).setText(String.format("Example: " + "%." + prog + "f", ex));
 
         // Inflate and set the layout for the dialog
 
@@ -81,11 +82,14 @@ public class SeekbarDialogClass extends DialogFragment implements SeekBar.OnSeek
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 SeekBar_.setProgress(move); //newest move
+                                if(!((TextView)FragB.Fragb.findViewById(R.id.textView5)).getText().toString().equals(""))
+                                    FragB.precsionVal(move); //if you want to change the val just when you press ok, go to the ok field in the mainActivity and call to precsionVal there
                             }
                         })
                 .setNegativeButton("Cancel",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
+                                move = prog; //the old move
                                 dismiss();
                             }
                         }

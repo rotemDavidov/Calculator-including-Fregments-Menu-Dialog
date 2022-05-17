@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity implements FragA.FragAListen
             fragB.notifyFragB(val); //val needs to be update because we change to land/port sacpe
             fragB.precsionVal(move); //after we update the val we update the precision of the val
             SeekbarDialogClass.move=move; //we will update the the movement because on new bundle the move need to be taken from the static move field
-            }
+            SeekbarDialogClass.SeekBar_.setEnabled(true);
+        }
     }
 
     //-------------------------------------------------------------------------------------------------------------------
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements FragA.FragAListen
     public void sendingValToCalculate(View view,float num1,float num2){
         int id = ((Button)view).getId();
         String btnName = getResources().getResourceEntryName(id);
-        if(btnName.equals("sum")) val = num1+num2;
+        if(btnName.equals("add")) val = num1+num2;
         else if(btnName.equals("sub")) val = num1-num2;
         else if(btnName.equals("mul")) val = num1*num2;
         else if(btnName.equals("divide")) val = num1/num2;
